@@ -1,0 +1,1669 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    startup_stm32f10x_hd.o(RESET) refers to startup_stm32f10x_hd.o(STACK) for __initial_sp
+    startup_stm32f10x_hd.o(RESET) refers to startup_stm32f10x_hd.o(.text) for Reset_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.NMI_Handler) for NMI_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.HardFault_Handler) for HardFault_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.MemManage_Handler) for MemManage_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.BusFault_Handler) for BusFault_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.UsageFault_Handler) for UsageFault_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.SVC_Handler) for SVC_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.DebugMon_Handler) for DebugMon_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.PendSV_Handler) for PendSV_Handler
+    startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(i.SysTick_Handler) for SysTick_Handler
+    startup_stm32f10x_hd.o(RESET) refers to usart.o(i.USART1_IRQHandler) for USART1_IRQHandler
+    startup_stm32f10x_hd.o(RESET) refers to usart.o(i.USART2_IRQHandler) for USART2_IRQHandler
+    startup_stm32f10x_hd.o(.text) refers to system_stm32f10x.o(i.SystemInit) for SystemInit
+    startup_stm32f10x_hd.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_stm32f10x.o(i.SetSysClock) refers to system_stm32f10x.o(i.SetSysClockTo72) for SetSysClockTo72
+    system_stm32f10x.o(i.SystemCoreClockUpdate) refers to system_stm32f10x.o(.data) for SystemCoreClock
+    system_stm32f10x.o(i.SystemInit) refers to system_stm32f10x.o(i.SetSysClock) for SetSysClock
+    stm32f10x_adc.o(i.ADC_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_bkp.o(i.BKP_DeInit) refers to stm32f10x_rcc.o(i.RCC_BackupResetCmd) for RCC_BackupResetCmd
+    stm32f10x_can.o(i.CAN_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_can.o(i.CAN_GetITStatus) refers to stm32f10x_can.o(i.CheckITStatus) for CheckITStatus
+    stm32f10x_cec.o(i.CEC_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_dac.o(i.DAC_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_flash.o(i.FLASH_EnableWriteProtection) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_EraseAllBank1Pages) refers to stm32f10x_flash.o(i.FLASH_WaitForLastBank1Operation) for FLASH_WaitForLastBank1Operation
+    stm32f10x_flash.o(i.FLASH_EraseAllPages) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_EraseOptionBytes) refers to stm32f10x_flash.o(i.FLASH_GetReadOutProtectionStatus) for FLASH_GetReadOutProtectionStatus
+    stm32f10x_flash.o(i.FLASH_EraseOptionBytes) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ErasePage) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ProgramHalfWord) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ProgramOptionByteData) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ProgramWord) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ReadOutProtection) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_UserOptionByteConfig) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_WaitForLastBank1Operation) refers to stm32f10x_flash.o(i.FLASH_GetBank1Status) for FLASH_GetBank1Status
+    stm32f10x_flash.o(i.FLASH_WaitForLastOperation) refers to stm32f10x_flash.o(i.FLASH_GetBank1Status) for FLASH_GetBank1Status
+    stm32f10x_gpio.o(i.GPIO_AFIODeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_gpio.o(i.GPIO_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_i2c.o(i.I2C_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_i2c.o(i.I2C_Init) refers to stm32f10x_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    stm32f10x_pwr.o(i.PWR_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_rcc.o(i.RCC_GetClocksFreq) refers to stm32f10x_rcc.o(.data) for APBAHBPrescTable
+    stm32f10x_rcc.o(i.RCC_WaitForHSEStartUp) refers to stm32f10x_rcc.o(i.RCC_GetFlagStatus) for RCC_GetFlagStatus
+    stm32f10x_rtc.o(i.RTC_SetAlarm) refers to stm32f10x_rtc.o(i.RTC_EnterConfigMode) for RTC_EnterConfigMode
+    stm32f10x_rtc.o(i.RTC_SetAlarm) refers to stm32f10x_rtc.o(i.RTC_ExitConfigMode) for RTC_ExitConfigMode
+    stm32f10x_rtc.o(i.RTC_SetCounter) refers to stm32f10x_rtc.o(i.RTC_EnterConfigMode) for RTC_EnterConfigMode
+    stm32f10x_rtc.o(i.RTC_SetCounter) refers to stm32f10x_rtc.o(i.RTC_ExitConfigMode) for RTC_ExitConfigMode
+    stm32f10x_rtc.o(i.RTC_SetPrescaler) refers to stm32f10x_rtc.o(i.RTC_EnterConfigMode) for RTC_EnterConfigMode
+    stm32f10x_rtc.o(i.RTC_SetPrescaler) refers to stm32f10x_rtc.o(i.RTC_ExitConfigMode) for RTC_ExitConfigMode
+    stm32f10x_spi.o(i.I2S_Init) refers to stm32f10x_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    stm32f10x_spi.o(i.SPI_I2S_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_spi.o(i.SPI_I2S_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_tim.o(i.TIM_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_tim.o(i.TIM_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_tim.o(i.TIM_ETRClockMode1Config) refers to stm32f10x_tim.o(i.TIM_ETRConfig) for TIM_ETRConfig
+    stm32f10x_tim.o(i.TIM_ETRClockMode2Config) refers to stm32f10x_tim.o(i.TIM_ETRConfig) for TIM_ETRConfig
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TI1_Config) for TI1_Config
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TIM_SetIC1Prescaler) for TIM_SetIC1Prescaler
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TI2_Config) for TI2_Config
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TIM_SetIC2Prescaler) for TIM_SetIC2Prescaler
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TI3_Config) for TI3_Config
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TIM_SetIC3Prescaler) for TIM_SetIC3Prescaler
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TI4_Config) for TI4_Config
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TIM_SetIC4Prescaler) for TIM_SetIC4Prescaler
+    stm32f10x_tim.o(i.TIM_ITRxExternalClockConfig) refers to stm32f10x_tim.o(i.TIM_SelectInputTrigger) for TIM_SelectInputTrigger
+    stm32f10x_tim.o(i.TIM_PWMIConfig) refers to stm32f10x_tim.o(i.TI1_Config) for TI1_Config
+    stm32f10x_tim.o(i.TIM_PWMIConfig) refers to stm32f10x_tim.o(i.TIM_SetIC1Prescaler) for TIM_SetIC1Prescaler
+    stm32f10x_tim.o(i.TIM_PWMIConfig) refers to stm32f10x_tim.o(i.TI2_Config) for TI2_Config
+    stm32f10x_tim.o(i.TIM_PWMIConfig) refers to stm32f10x_tim.o(i.TIM_SetIC2Prescaler) for TIM_SetIC2Prescaler
+    stm32f10x_tim.o(i.TIM_TIxExternalClockConfig) refers to stm32f10x_tim.o(i.TI2_Config) for TI2_Config
+    stm32f10x_tim.o(i.TIM_TIxExternalClockConfig) refers to stm32f10x_tim.o(i.TI1_Config) for TI1_Config
+    stm32f10x_tim.o(i.TIM_TIxExternalClockConfig) refers to stm32f10x_tim.o(i.TIM_SelectInputTrigger) for TIM_SelectInputTrigger
+    stm32f10x_usart.o(i.USART_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_usart.o(i.USART_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_usart.o(i.USART_Init) refers to stm32f10x_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    stm32f10x_wwdg.o(i.WWDG_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    main.o(i.main) refers to misc.o(i.NVIC_PriorityGroupConfig) for NVIC_PriorityGroupConfig
+    main.o(i.main) refers to delay.o(i.delay_init) for delay_init
+    main.o(i.main) refers to usart.o(i.uart_init) for uart_init
+    main.o(i.main) refers to main_window.o(i.ShowMianMeun) for ShowMianMeun
+    main.o(i.main) refers to phone_ui.o(i.UI_BufferDeal) for UI_BufferDeal
+    main.o(i.main) refers to phone_ui.o(i.Button_SetColor) for Button_SetColor
+    main.o(i.main) refers to phone_ui.o(i.TextView_SetText) for TextView_SetText
+    main.o(i.main) refers to phone_ui.o(i.TextView_AddText) for TextView_AddText
+    main.o(i.main) refers to phone_ui.o(i.TextView_AddInt) for TextView_AddInt
+    main.o(i.main) refers to phone_ui.o(i.SeekBar_SetProgress) for SeekBar_SetProgress
+    main.o(i.main) refers to dflti.o(.text) for __aeabi_i2d
+    main.o(i.main) refers to phone_ui.o(i.LineChart_AddData) for LineChart_AddData
+    main.o(i.main) refers to delay.o(i.delay_ms) for delay_ms
+    main.o(i.main) refers to main_window.o(.data) for main_bt
+    main.o(i.main) refers to main_window.o(.bss) for main_et
+    key.o(i.KEY_Init) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
+    key.o(i.KEY_Init) refers to stm32f10x_gpio.o(i.GPIO_Init) for GPIO_Init
+    led.o(i.LED_Init) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
+    led.o(i.LED_Init) refers to stm32f10x_gpio.o(i.GPIO_Init) for GPIO_Init
+    led.o(i.LED_Init) refers to stm32f10x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    delay.o(i.delay_init) refers to misc.o(i.SysTick_CLKSourceConfig) for SysTick_CLKSourceConfig
+    delay.o(i.delay_init) refers to system_stm32f10x.o(.data) for SystemCoreClock
+    delay.o(i.delay_init) refers to delay.o(.data) for fac_us
+    delay.o(i.delay_ms) refers to delay.o(.data) for fac_ms
+    delay.o(i.delay_us) refers to delay.o(.data) for fac_us
+    sys.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_PriorityGroupConfig) for NVIC_PriorityGroupConfig
+    usart.o(i.USART1_IRQHandler) refers to stm32f10x_usart.o(i.USART_GetITStatus) for USART_GetITStatus
+    usart.o(i.USART1_IRQHandler) refers to stm32f10x_usart.o(i.USART_ReceiveData) for USART_ReceiveData
+    usart.o(i.USART1_IRQHandler) refers to phone_ui.o(i.UI_ByteDeal) for UI_ByteDeal
+    usart.o(i.USART2_IRQHandler) refers to stm32f10x_usart.o(i.USART_GetITStatus) for USART_GetITStatus
+    usart.o(i.USART2_IRQHandler) refers to stm32f10x_usart.o(i.USART_ReceiveData) for USART_ReceiveData
+    usart.o(i.Uart_SendByte) refers to stm32f10x_usart.o(i.USART_SendData) for USART_SendData
+    usart.o(i.uart2_init) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
+    usart.o(i.uart2_init) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd) for RCC_APB1PeriphClockCmd
+    usart.o(i.uart2_init) refers to stm32f10x_gpio.o(i.GPIO_Init) for GPIO_Init
+    usart.o(i.uart2_init) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    usart.o(i.uart2_init) refers to stm32f10x_usart.o(i.USART_Init) for USART_Init
+    usart.o(i.uart2_init) refers to stm32f10x_usart.o(i.USART_ITConfig) for USART_ITConfig
+    usart.o(i.uart2_init) refers to stm32f10x_usart.o(i.USART_Cmd) for USART_Cmd
+    usart.o(i.uart_init) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
+    usart.o(i.uart_init) refers to stm32f10x_gpio.o(i.GPIO_Init) for GPIO_Init
+    usart.o(i.uart_init) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    usart.o(i.uart_init) refers to stm32f10x_usart.o(i.USART_Init) for USART_Init
+    usart.o(i.uart_init) refers to stm32f10x_usart.o(i.USART_ITConfig) for USART_ITConfig
+    usart.o(i.uart_init) refers to stm32f10x_usart.o(i.USART_Cmd) for USART_Cmd
+    phone_ui.o(i.AddButtonToList) refers to phone_ui.o(.data) for ButtonList
+    phone_ui.o(i.AddEditTextToList) refers to phone_ui.o(.data) for EditTextList
+    phone_ui.o(i.AddJoyStickToList) refers to phone_ui.o(.data) for JoyStickList
+    phone_ui.o(i.AddLineChartToList) refers to phone_ui.o(.data) for LineChartList
+    phone_ui.o(i.AddSeekBarToList) refers to phone_ui.o(.data) for SeekBarList
+    phone_ui.o(i.AddSwitchToList) refers to phone_ui.o(.data) for SwitchList
+    phone_ui.o(i.AddTextViewToList) refers to phone_ui.o(.data) for TextViewList
+    phone_ui.o(i.Button_Init) refers to phone_ui.o(i.AddButtonToList) for AddButtonToList
+    phone_ui.o(i.Button_Init) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Button_Init) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Button_Init) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Button_SetBackgroundColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Button_SetBackgroundColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Button_SetBackgroundColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Button_SetColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Button_SetColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Button_SetColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Button_SetRotation) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Button_SetRotation) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Button_SetRotation) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Button_SetStyle) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Button_SetStyle) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Button_SetStyle) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Button_SetText) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Button_SetText) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Button_SetText) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Button_SetTextColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Button_SetTextColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Button_SetTextColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Button_SetTextSize) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Button_SetTextSize) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Button_SetTextSize) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_Init) refers to phone_ui.o(i.AddEditTextToList) for AddEditTextToList
+    phone_ui.o(i.EditText_Init) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_Init) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_Init) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetBackgroundColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetBackgroundColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetBackgroundColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetFloat) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetFloat) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetFloat) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    phone_ui.o(i.EditText_SetFloat) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    phone_ui.o(i.EditText_SetFloat) refers to ffixi.o(.text) for __aeabi_f2iz
+    phone_ui.o(i.EditText_SetFloat) refers to phone_ui.o(i.UI_SendInt) for UI_SendInt
+    phone_ui.o(i.EditText_SetFloat) refers to dfltui.o(.text) for __aeabi_ui2d
+    phone_ui.o(i.EditText_SetFloat) refers to pow.o(i.pow) for pow
+    phone_ui.o(i.EditText_SetFloat) refers to f2d.o(.text) for __aeabi_f2d
+    phone_ui.o(i.EditText_SetFloat) refers to dmul.o(.text) for __aeabi_dmul
+    phone_ui.o(i.EditText_SetFloat) refers to dfixui.o(.text) for __aeabi_d2uiz
+    phone_ui.o(i.EditText_SetFloat) refers to phone_ui.o(i.my_pow) for my_pow
+    phone_ui.o(i.EditText_SetFloat) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetHint) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetHint) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetHint) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetInt) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetInt) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetInt) refers to phone_ui.o(i.UI_SendInt) for UI_SendInt
+    phone_ui.o(i.EditText_SetInt) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetRotation) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetRotation) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetRotation) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetStyle) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetStyle) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetStyle) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetText) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetText) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetText) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetTextColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetTextColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetTextColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.EditText_SetTextSize) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.EditText_SetTextSize) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.EditText_SetTextSize) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.JoyStick_Init) refers to phone_ui.o(i.AddJoyStickToList) for AddJoyStickToList
+    phone_ui.o(i.JoyStick_Init) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.JoyStick_Init) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.JoyStick_Init) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.JoyStick_SetBackgroundColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.JoyStick_SetBackgroundColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.JoyStick_SetBackgroundColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.JoyStick_SetColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.JoyStick_SetColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.JoyStick_SetColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.JoyStick_SetShape) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.JoyStick_SetShape) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.JoyStick_SetShape) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.JoyStick_SetStyle) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.JoyStick_SetStyle) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.JoyStick_SetStyle) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_AddData) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_AddData) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_AddData) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_Clear) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_Clear) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_Clear) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_Init) refers to phone_ui.o(i.AddLineChartToList) for AddLineChartToList
+    phone_ui.o(i.LineChart_Init) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_Init) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_Init) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_SetBackgroundColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_SetBackgroundColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_SetBackgroundColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_SetChartColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_SetChartColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_SetChartColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_SetLineColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_SetLineColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_SetLineColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_SetStyle) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_SetStyle) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_SetStyle) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_SetXAxis) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_SetXAxis) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_SetXAxis) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.LineChart_SetYAxis) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.LineChart_SetYAxis) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.LineChart_SetYAxis) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.SeekBar_Init) refers to phone_ui.o(i.AddSeekBarToList) for AddSeekBarToList
+    phone_ui.o(i.SeekBar_Init) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.SeekBar_Init) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.SeekBar_Init) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.SeekBar_SetBackgroundColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.SeekBar_SetBackgroundColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.SeekBar_SetBackgroundColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.SeekBar_SetColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.SeekBar_SetColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.SeekBar_SetColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.SeekBar_SetMax) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.SeekBar_SetMax) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.SeekBar_SetMax) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.SeekBar_SetProgress) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.SeekBar_SetProgress) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.SeekBar_SetProgress) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.SeekBar_SetRotation) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.SeekBar_SetRotation) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.SeekBar_SetRotation) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.SeekBar_SetStyle) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.SeekBar_SetStyle) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.SeekBar_SetStyle) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Switch_Init) refers to phone_ui.o(i.AddSwitchToList) for AddSwitchToList
+    phone_ui.o(i.Switch_Init) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Switch_Init) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Switch_Init) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Switch_SetBackgroundColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Switch_SetBackgroundColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Switch_SetBackgroundColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Switch_SetChecked) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Switch_SetChecked) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Switch_SetChecked) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Switch_SetColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Switch_SetColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Switch_SetColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Switch_SetRotation) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Switch_SetRotation) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Switch_SetRotation) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Switch_SetStyle) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Switch_SetStyle) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Switch_SetStyle) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_AddFloat) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_AddFloat) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_AddFloat) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    phone_ui.o(i.TextView_AddFloat) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    phone_ui.o(i.TextView_AddFloat) refers to ffixi.o(.text) for __aeabi_f2iz
+    phone_ui.o(i.TextView_AddFloat) refers to phone_ui.o(i.UI_SendInt) for UI_SendInt
+    phone_ui.o(i.TextView_AddFloat) refers to dfltui.o(.text) for __aeabi_ui2d
+    phone_ui.o(i.TextView_AddFloat) refers to pow.o(i.pow) for pow
+    phone_ui.o(i.TextView_AddFloat) refers to f2d.o(.text) for __aeabi_f2d
+    phone_ui.o(i.TextView_AddFloat) refers to dmul.o(.text) for __aeabi_dmul
+    phone_ui.o(i.TextView_AddFloat) refers to dfixui.o(.text) for __aeabi_d2uiz
+    phone_ui.o(i.TextView_AddFloat) refers to phone_ui.o(i.my_pow) for my_pow
+    phone_ui.o(i.TextView_AddFloat) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_AddInt) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_AddInt) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_AddInt) refers to phone_ui.o(i.UI_SendInt) for UI_SendInt
+    phone_ui.o(i.TextView_AddInt) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_AddText) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_AddText) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_AddText) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_Init) refers to phone_ui.o(i.AddTextViewToList) for AddTextViewToList
+    phone_ui.o(i.TextView_Init) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_Init) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_Init) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetBackgroundColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetBackgroundColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetBackgroundColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetFloat) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetFloat) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetFloat) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    phone_ui.o(i.TextView_SetFloat) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    phone_ui.o(i.TextView_SetFloat) refers to ffixi.o(.text) for __aeabi_f2iz
+    phone_ui.o(i.TextView_SetFloat) refers to phone_ui.o(i.UI_SendInt) for UI_SendInt
+    phone_ui.o(i.TextView_SetFloat) refers to dfltui.o(.text) for __aeabi_ui2d
+    phone_ui.o(i.TextView_SetFloat) refers to pow.o(i.pow) for pow
+    phone_ui.o(i.TextView_SetFloat) refers to f2d.o(.text) for __aeabi_f2d
+    phone_ui.o(i.TextView_SetFloat) refers to dmul.o(.text) for __aeabi_dmul
+    phone_ui.o(i.TextView_SetFloat) refers to dfixui.o(.text) for __aeabi_d2uiz
+    phone_ui.o(i.TextView_SetFloat) refers to phone_ui.o(i.my_pow) for my_pow
+    phone_ui.o(i.TextView_SetFloat) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetInt) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetInt) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetInt) refers to phone_ui.o(i.UI_SendInt) for UI_SendInt
+    phone_ui.o(i.TextView_SetInt) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetRotation) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetRotation) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetRotation) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetStyle) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetStyle) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetStyle) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetText) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetText) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetText) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetTextColor) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetTextColor) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetTextColor) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetTextGravity) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetTextGravity) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetTextGravity) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.TextView_SetTextSize) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.TextView_SetTextSize) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.TextView_SetTextSize) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.UI_BufferDeal) refers to phone_ui.o(i.UI_CommandProcessor) for UI_CommandProcessor
+    phone_ui.o(i.UI_BufferDeal) refers to phone_ui.o(.data) for rxStart
+    phone_ui.o(i.UI_BufferDeal) refers to phone_ui.o(.bss) for UI_BUF
+    phone_ui.o(i.UI_ByteDeal) refers to phone_ui.o(.data) for UI_BUF_STA
+    phone_ui.o(i.UI_ByteDeal) refers to phone_ui.o(.bss) for UI_BUF
+    phone_ui.o(i.UI_CommandProcessor) refers to strlen.o(.text) for strlen
+    phone_ui.o(i.UI_CommandProcessor) refers to strcpy.o(.text) for strcpy
+    phone_ui.o(i.UI_CommandProcessor) refers to phone_ui.o(.data) for ButtonList
+    phone_ui.o(i.UI_SendArray) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.UI_SendByte) refers to usart.o(i.Uart_SendByte) for Uart_SendByte
+    phone_ui.o(i.UI_SendInt) refers to phone_ui.o(i.my_abs) for my_abs
+    phone_ui.o(i.UI_SendInt) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.UI_SendInt) refers to phone_ui.o(i.my_pow) for my_pow
+    phone_ui.o(i.Window_Clear) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Window_Clear) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Window_Clear) refers to phone_ui.o(.data) for UI_End
+    phone_ui.o(i.Window_SetBackground) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Window_SetBackground) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Window_SetBackground) refers to phone_ui.o(.data) for UI_Start
+    phone_ui.o(i.Window_SetSize) refers to phone_ui.o(i.UI_SendArray) for UI_SendArray
+    phone_ui.o(i.Window_SetSize) refers to phone_ui.o(i.UI_SendByte) for UI_SendByte
+    phone_ui.o(i.Window_SetSize) refers to phone_ui.o(.data) for UI_Start
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.Window_Clear) for Window_Clear
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.Window_SetBackground) for Window_SetBackground
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.Window_SetSize) for Window_SetSize
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.TextView_Init) for TextView_Init
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.TextView_SetTextGravity) for TextView_SetTextGravity
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.TextView_SetBackgroundColor) for TextView_SetBackgroundColor
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.TextView_SetStyle) for TextView_SetStyle
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.TextView_SetText) for TextView_SetText
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.EditText_Init) for EditText_Init
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.EditText_SetHint) for EditText_SetHint
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.Button_Init) for Button_Init
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.Button_SetText) for Button_SetText
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.Button_SetTextSize) for Button_SetTextSize
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.Switch_Init) for Switch_Init
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.Switch_SetChecked) for Switch_SetChecked
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.SeekBar_Init) for SeekBar_Init
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.SeekBar_SetColor) for SeekBar_SetColor
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.SeekBar_SetProgress) for SeekBar_SetProgress
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.LineChart_Init) for LineChart_Init
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.LineChart_SetStyle) for LineChart_SetStyle
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.LineChart_SetLineColor) for LineChart_SetLineColor
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.LineChart_SetChartColor) for LineChart_SetChartColor
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.JoyStick_Init) for JoyStick_Init
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.JoyStick_SetShape) for JoyStick_SetShape
+    main_window.o(i.ShowMianMeun) refers to phone_ui.o(i.JoyStick_SetColor) for JoyStick_SetColor
+    main_window.o(i.ShowMianMeun) refers to main_window.o(.data) for main_rx_tv
+    main_window.o(i.ShowMianMeun) refers to main_window.o(.constdata) for TextViewStyle
+    main_window.o(i.ShowMianMeun) refers to main_window.o(.bss) for main_et
+    pow.o(i.__softfp_pow) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow.o(i.__softfp_pow) refers to pow.o(i.pow) for pow
+    pow.o(i.pow) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow.o(i.pow) refers to dunder.o(i.__mathlib_dbl_infnan2) for __mathlib_dbl_infnan2
+    pow.o(i.pow) refers to errno.o(i.__set_errno) for __set_errno
+    pow.o(i.pow) refers to dunder.o(i.__mathlib_dbl_divzero) for __mathlib_dbl_divzero
+    pow.o(i.pow) refers to ddiv.o(.text) for __aeabi_ddiv
+    pow.o(i.pow) refers to sqrt.o(i.sqrt) for sqrt
+    pow.o(i.pow) refers to dmul.o(.text) for __aeabi_dmul
+    pow.o(i.pow) refers to dflti.o(.text) for __aeabi_i2d
+    pow.o(i.pow) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    pow.o(i.pow) refers to dunder.o(i.__mathlib_dbl_overflow) for __mathlib_dbl_overflow
+    pow.o(i.pow) refers to dunder.o(i.__mathlib_dbl_underflow) for __mathlib_dbl_underflow
+    pow.o(i.pow) refers to dadd.o(.text) for __aeabi_dsub
+    pow.o(i.pow) refers to dscalb.o(.text) for __ARM_scalbn
+    pow.o(i.pow) refers to qnan.o(.constdata) for __mathlib_zero
+    pow.o(i.pow) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    pow.o(i.pow) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    pow.o(i.pow) refers to pow.o(.constdata) for .constdata
+    pow.o(i.pow) refers to fpclassify.o(i.__ARM_fpclassify) for __ARM_fpclassify
+    pow.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow_x.o(i.____softfp_pow$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow_x.o(i.____softfp_pow$lsc) refers to pow_x.o(i.__pow$lsc) for __pow$lsc
+    pow_x.o(i.__pow$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow_x.o(i.__pow$lsc) refers to dunder.o(i.__mathlib_dbl_infnan2) for __mathlib_dbl_infnan2
+    pow_x.o(i.__pow$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    pow_x.o(i.__pow$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    pow_x.o(i.__pow$lsc) refers to sqrt.o(i.sqrt) for sqrt
+    pow_x.o(i.__pow$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    pow_x.o(i.__pow$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    pow_x.o(i.__pow$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    pow_x.o(i.__pow$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    pow_x.o(i.__pow$lsc) refers to qnan.o(.constdata) for __mathlib_zero
+    pow_x.o(i.__pow$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    pow_x.o(i.__pow$lsc) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    pow_x.o(i.__pow$lsc) refers to pow_x.o(.constdata) for .constdata
+    pow_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cfcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cfrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dunder.o(i.__mathlib_dbl_divzero) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_infnan) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_infnan2) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_invalid) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_overflow) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_posinfnan) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_underflow) refers to dscalb.o(.text) for __ARM_scalbn
+    fpclassify.o(i.__ARM_fpclassify) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
+    qnan.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__softfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__softfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.__softfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt.o(i.sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    sqrt_x.o(i.__sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.__sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.__sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.__sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f10x_hd.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f10x_hd.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    dsqrt.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dsqrt.o(.text) refers to depilogue.o(.text) for _double_round
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_stm32f10x_hd.o(HEAP), (512 bytes).
+    Removing core_cm3.o(.emb_text), (32 bytes).
+    Removing system_stm32f10x.o(i.SystemCoreClockUpdate), (164 bytes).
+    Removing misc.o(i.NVIC_SetVectorTable), (20 bytes).
+    Removing misc.o(i.NVIC_SystemLPConfig), (32 bytes).
+    Removing stm32f10x_adc.o(i.ADC_AnalogWatchdogCmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_AnalogWatchdogSingleChannelConfig), (16 bytes).
+    Removing stm32f10x_adc.o(i.ADC_AnalogWatchdogThresholdsConfig), (6 bytes).
+    Removing stm32f10x_adc.o(i.ADC_AutoInjectedConvCmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ClearFlag), (6 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ClearITPendingBit), (10 bytes).
+    Removing stm32f10x_adc.o(i.ADC_Cmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_DMACmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_DeInit), (92 bytes).
+    Removing stm32f10x_adc.o(i.ADC_DiscModeChannelCountConfig), (24 bytes).
+    Removing stm32f10x_adc.o(i.ADC_DiscModeCmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ExternalTrigConvCmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ExternalTrigInjectedConvCmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ExternalTrigInjectedConvConfig), (16 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetCalibrationStatus), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetConversionValue), (8 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetDualModeConversionValue), (12 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetFlagStatus), (18 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetITStatus), (36 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetInjectedConversionValue), (28 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetResetCalibrationStatus), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetSoftwareStartConvStatus), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetSoftwareStartInjectedConvCmdStatus), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ITConfig), (24 bytes).
+    Removing stm32f10x_adc.o(i.ADC_Init), (80 bytes).
+    Removing stm32f10x_adc.o(i.ADC_InjectedChannelConfig), (130 bytes).
+    Removing stm32f10x_adc.o(i.ADC_InjectedDiscModeCmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_InjectedSequencerLengthConfig), (24 bytes).
+    Removing stm32f10x_adc.o(i.ADC_RegularChannelConfig), (184 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ResetCalibration), (10 bytes).
+    Removing stm32f10x_adc.o(i.ADC_SetInjectedOffset), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_SoftwareStartConvCmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_SoftwareStartInjectedConvCmd), (22 bytes).
+    Removing stm32f10x_adc.o(i.ADC_StartCalibration), (10 bytes).
+    Removing stm32f10x_adc.o(i.ADC_StructInit), (18 bytes).
+    Removing stm32f10x_adc.o(i.ADC_TempSensorVrefintCmd), (36 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_ClearFlag), (20 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_ClearITPendingBit), (20 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_DeInit), (16 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_GetFlagStatus), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_GetITStatus), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_ITConfig), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_RTCOutputConfig), (28 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_ReadBackupRegister), (28 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_SetRTCCalibrationValue), (28 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_TamperPinCmd), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_TamperPinLevelConfig), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_WriteBackupRegister), (28 bytes).
+    Removing stm32f10x_can.o(i.CAN_CancelTransmit), (48 bytes).
+    Removing stm32f10x_can.o(i.CAN_ClearFlag), (56 bytes).
+    Removing stm32f10x_can.o(i.CAN_ClearITPendingBit), (168 bytes).
+    Removing stm32f10x_can.o(i.CAN_DBGFreeze), (22 bytes).
+    Removing stm32f10x_can.o(i.CAN_DeInit), (56 bytes).
+    Removing stm32f10x_can.o(i.CAN_FIFORelease), (22 bytes).
+    Removing stm32f10x_can.o(i.CAN_FilterInit), (264 bytes).
+    Removing stm32f10x_can.o(i.CAN_GetFlagStatus), (120 bytes).
+    Removing stm32f10x_can.o(i.CAN_GetITStatus), (288 bytes).
+    Removing stm32f10x_can.o(i.CAN_GetLSBTransmitErrorCounter), (12 bytes).
+    Removing stm32f10x_can.o(i.CAN_GetLastErrorCode), (12 bytes).
+    Removing stm32f10x_can.o(i.CAN_GetReceiveErrorCounter), (10 bytes).
+    Removing stm32f10x_can.o(i.CAN_ITConfig), (18 bytes).
+    Removing stm32f10x_can.o(i.CAN_Init), (276 bytes).
+    Removing stm32f10x_can.o(i.CAN_MessagePending), (30 bytes).
+    Removing stm32f10x_can.o(i.CAN_OperatingModeRequest), (162 bytes).
+    Removing stm32f10x_can.o(i.CAN_Receive), (240 bytes).
+    Removing stm32f10x_can.o(i.CAN_SlaveStartBank), (52 bytes).
+    Removing stm32f10x_can.o(i.CAN_Sleep), (30 bytes).
+    Removing stm32f10x_can.o(i.CAN_StructInit), (32 bytes).
+    Removing stm32f10x_can.o(i.CAN_TTComModeCmd), (118 bytes).
+    Removing stm32f10x_can.o(i.CAN_Transmit), (294 bytes).
+    Removing stm32f10x_can.o(i.CAN_TransmitStatus), (160 bytes).
+    Removing stm32f10x_can.o(i.CAN_WakeUp), (48 bytes).
+    Removing stm32f10x_can.o(i.CheckITStatus), (18 bytes).
+    Removing stm32f10x_cec.o(i.CEC_ClearFlag), (36 bytes).
+    Removing stm32f10x_cec.o(i.CEC_ClearITPendingBit), (36 bytes).
+    Removing stm32f10x_cec.o(i.CEC_Cmd), (32 bytes).
+    Removing stm32f10x_cec.o(i.CEC_DeInit), (22 bytes).
+    Removing stm32f10x_cec.o(i.CEC_EndOfMessageCmd), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_GetFlagStatus), (48 bytes).
+    Removing stm32f10x_cec.o(i.CEC_GetITStatus), (40 bytes).
+    Removing stm32f10x_cec.o(i.CEC_ITConfig), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_Init), (32 bytes).
+    Removing stm32f10x_cec.o(i.CEC_OwnAddressConfig), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_ReceiveDataByte), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_SendDataByte), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_SetPrescaler), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_StartOfMessage), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_CalcBlockCRC), (36 bytes).
+    Removing stm32f10x_crc.o(i.CRC_CalcCRC), (16 bytes).
+    Removing stm32f10x_crc.o(i.CRC_GetCRC), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_GetIDRegister), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_ResetDR), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_SetIDRegister), (12 bytes).
+    Removing stm32f10x_dac.o(i.DAC_Cmd), (40 bytes).
+    Removing stm32f10x_dac.o(i.DAC_DMACmd), (44 bytes).
+    Removing stm32f10x_dac.o(i.DAC_DeInit), (22 bytes).
+    Removing stm32f10x_dac.o(i.DAC_DualSoftwareTriggerCmd), (36 bytes).
+    Removing stm32f10x_dac.o(i.DAC_GetDataOutputValue), (36 bytes).
+    Removing stm32f10x_dac.o(i.DAC_Init), (52 bytes).
+    Removing stm32f10x_dac.o(i.DAC_SetChannel1Data), (32 bytes).
+    Removing stm32f10x_dac.o(i.DAC_SetChannel2Data), (32 bytes).
+    Removing stm32f10x_dac.o(i.DAC_SetDualChannelData), (36 bytes).
+    Removing stm32f10x_dac.o(i.DAC_SoftwareTriggerCmd), (44 bytes).
+    Removing stm32f10x_dac.o(i.DAC_StructInit), (12 bytes).
+    Removing stm32f10x_dac.o(i.DAC_WaveGenerationCmd), (40 bytes).
+    Removing stm32f10x_dbgmcu.o(i.DBGMCU_Config), (32 bytes).
+    Removing stm32f10x_dbgmcu.o(i.DBGMCU_GetDEVID), (16 bytes).
+    Removing stm32f10x_dbgmcu.o(i.DBGMCU_GetREVID), (12 bytes).
+    Removing stm32f10x_dma.o(i.DMA_ClearFlag), (28 bytes).
+    Removing stm32f10x_dma.o(i.DMA_ClearITPendingBit), (28 bytes).
+    Removing stm32f10x_dma.o(i.DMA_Cmd), (24 bytes).
+    Removing stm32f10x_dma.o(i.DMA_DeInit), (332 bytes).
+    Removing stm32f10x_dma.o(i.DMA_GetCurrDataCounter), (8 bytes).
+    Removing stm32f10x_dma.o(i.DMA_GetFlagStatus), (44 bytes).
+    Removing stm32f10x_dma.o(i.DMA_GetITStatus), (44 bytes).
+    Removing stm32f10x_dma.o(i.DMA_ITConfig), (18 bytes).
+    Removing stm32f10x_dma.o(i.DMA_Init), (60 bytes).
+    Removing stm32f10x_dma.o(i.DMA_SetCurrDataCounter), (4 bytes).
+    Removing stm32f10x_dma.o(i.DMA_StructInit), (26 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_ClearFlag), (12 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_ClearITPendingBit), (12 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_DeInit), (36 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_GenerateSWInterrupt), (16 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_GetFlagStatus), (24 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_GetITStatus), (40 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_Init), (148 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_StructInit), (16 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ClearFlag), (12 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_EnableWriteProtection), (196 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_EraseAllBank1Pages), (72 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_EraseAllPages), (72 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_EraseOptionBytes), (168 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ErasePage), (76 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetBank1Status), (52 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetFlagStatus), (48 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetPrefetchBufferStatus), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetReadOutProtectionStatus), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetStatus), (52 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetUserOptionByte), (12 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetWriteProtectionOptionByte), (12 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_HalfCycleAccessCmd), (28 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ITConfig), (32 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_Lock), (20 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_LockBank1), (20 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_PrefetchBufferCmd), (28 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ProgramHalfWord), (64 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ProgramOptionByteData), (84 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ProgramWord), (108 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ReadOutProtection), (172 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_SetLatency), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_Unlock), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_UnlockBank1), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_UserOptionByteConfig), (104 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_WaitForLastBank1Operation), (38 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_WaitForLastOperation), (38 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_ClearFlag), (64 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_ClearITPendingBit), (72 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_GetECC), (28 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_GetFlagStatus), (56 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_GetITStatus), (68 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_ITConfig), (128 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDCmd), (92 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDDeInit), (68 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDECCCmd), (92 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDInit), (136 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDStructInit), (54 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NORSRAMCmd), (52 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NORSRAMDeInit), (54 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NORSRAMInit), (230 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NORSRAMStructInit), (114 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_PCCARDCmd), (48 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_PCCARDDeInit), (40 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_PCCARDInit), (132 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_PCCARDStructInit), (60 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_AFIODeInit), (20 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_DeInit), (200 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ETH_MediaInterfaceConfig), (12 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_EXTILineConfig), (64 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_EventOutputCmd), (12 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_EventOutputConfig), (32 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_PinLockConfig), (18 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_PinRemapConfig), (144 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ReadInputData), (8 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ReadInputDataBit), (18 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ReadOutputData), (8 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ReadOutputDataBit), (18 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ResetBits), (4 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_SetBits), (4 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_StructInit), (16 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_Write), (4 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_WriteBit), (10 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ARPCmd), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_AcknowledgeConfig), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_CalculatePEC), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_CheckEvent), (42 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ClearFlag), (12 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ClearITPendingBit), (12 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_Cmd), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_DMACmd), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_DMALastTransferCmd), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_DeInit), (56 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_DualAddressCmd), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_FastModeDutyCycleConfig), (28 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GeneralCallCmd), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GenerateSTART), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GenerateSTOP), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GetFlagStatus), (58 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GetITStatus), (38 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GetLastEvent), (26 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GetPEC), (8 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ITConfig), (18 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_Init), (236 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_NACKPositionConfig), (28 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_OwnAddress2Config), (22 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_PECPositionConfig), (28 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ReadRegister), (22 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ReceiveData), (8 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_SMBusAlertConfig), (28 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_Send7bitAddress), (18 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_SendData), (4 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_SoftwareResetCmd), (22 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_StretchClockCmd), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_StructInit), (30 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_TransmitPEC), (24 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_Enable), (16 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_GetFlagStatus), (24 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_ReloadCounter), (16 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_SetPrescaler), (12 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_SetReload), (12 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_WriteAccessCmd), (12 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_BackupAccessCmd), (12 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_ClearFlag), (20 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_DeInit), (22 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_EnterSTANDBYMode), (52 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_EnterSTOPMode), (64 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_GetFlagStatus), (24 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_PVDCmd), (12 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_PVDLevelConfig), (24 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_WakeUpPinCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ADCCLKConfig), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd), (32 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd), (32 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd), (32 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd), (32 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_AdjustHSICalibrationValue), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_BackupResetCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ClearFlag), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ClearITPendingBit), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ClockSecuritySystemCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_DeInit), (76 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_GetFlagStatus), (60 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_GetITStatus), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_GetSYSCLKSource), (16 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_HCLKConfig), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_HSEConfig), (76 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_HSICmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ITConfig), (32 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_LSEConfig), (52 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_LSICmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_MCOConfig), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PCLK1Config), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PCLK2Config), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PLLCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PLLConfig), (28 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_RTCCLKCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_RTCCLKConfig), (16 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_SYSCLKConfig), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_USBCLKConfig), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_WaitForHSEStartUp), (56 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_ClearFlag), (16 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_ClearITPendingBit), (16 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_EnterConfigMode), (20 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_ExitConfigMode), (20 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_GetCounter), (20 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_GetDivider), (24 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_GetFlagStatus), (24 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_GetITStatus), (36 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_ITConfig), (32 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_SetAlarm), (28 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_SetCounter), (28 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_SetPrescaler), (32 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_WaitForLastTask), (20 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_WaitForSynchro), (36 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_CEATAITCmd), (16 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ClearFlag), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ClearITPendingBit), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ClockCmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_CmdStructInit), (14 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_CommandCompletionCmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_DMACmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_DataConfig), (48 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_DataStructInit), (20 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_DeInit), (36 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetCommandResponse), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetDataCounter), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetFIFOCount), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetFlagStatus), (24 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetITStatus), (24 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetPowerState), (16 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetResponse), (24 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ITConfig), (32 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_Init), (48 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ReadData), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SendCEATACmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SendCommand), (44 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SendSDIOSuspendCmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SetPowerState), (28 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SetSDIOOperation), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SetSDIOReadWaitMode), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_StartSDIOReadWait), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_StopSDIOReadWait), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_StructInit), (16 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_WriteData), (12 bytes).
+    Removing stm32f10x_spi.o(i.I2S_Cmd), (24 bytes).
+    Removing stm32f10x_spi.o(i.I2S_Init), (232 bytes).
+    Removing stm32f10x_spi.o(i.I2S_StructInit), (20 bytes).
+    Removing stm32f10x_spi.o(i.SPI_BiDirectionalLineConfig), (28 bytes).
+    Removing stm32f10x_spi.o(i.SPI_CalculateCRC), (24 bytes).
+    Removing stm32f10x_spi.o(i.SPI_Cmd), (24 bytes).
+    Removing stm32f10x_spi.o(i.SPI_DataSizeConfig), (18 bytes).
+    Removing stm32f10x_spi.o(i.SPI_GetCRC), (16 bytes).
+    Removing stm32f10x_spi.o(i.SPI_GetCRCPolynomial), (6 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_ClearFlag), (6 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_ClearITPendingBit), (20 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_DMACmd), (18 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_DeInit), (88 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_GetFlagStatus), (18 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_GetITStatus), (52 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_ITConfig), (32 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_ReceiveData), (6 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_SendData), (4 bytes).
+    Removing stm32f10x_spi.o(i.SPI_Init), (60 bytes).
+    Removing stm32f10x_spi.o(i.SPI_NSSInternalSoftwareConfig), (30 bytes).
+    Removing stm32f10x_spi.o(i.SPI_SSOutputCmd), (24 bytes).
+    Removing stm32f10x_spi.o(i.SPI_StructInit), (24 bytes).
+    Removing stm32f10x_spi.o(i.SPI_TransmitCRC), (10 bytes).
+    Removing stm32f10x_tim.o(i.TI1_Config), (128 bytes).
+    Removing stm32f10x_tim.o(i.TI2_Config), (152 bytes).
+    Removing stm32f10x_tim.o(i.TI3_Config), (144 bytes).
+    Removing stm32f10x_tim.o(i.TI4_Config), (152 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ARRPreloadConfig), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_BDTRConfig), (32 bytes).
+    Removing stm32f10x_tim.o(i.TIM_BDTRStructInit), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CCPreloadControl), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CCxCmd), (30 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CCxNCmd), (30 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearFlag), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearITPendingBit), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearOC1Ref), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearOC2Ref), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearOC3Ref), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearOC4Ref), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_Cmd), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CounterModeConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CtrlPWMOutputs), (30 bytes).
+    Removing stm32f10x_tim.o(i.TIM_DMACmd), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_DMAConfig), (10 bytes).
+    Removing stm32f10x_tim.o(i.TIM_DeInit), (488 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ETRClockMode1Config), (54 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ETRClockMode2Config), (32 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ETRConfig), (28 bytes).
+    Removing stm32f10x_tim.o(i.TIM_EncoderInterfaceConfig), (66 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ForcedOC1Config), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ForcedOC2Config), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ForcedOC3Config), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ForcedOC4Config), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GenerateEvent), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCapture1), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCapture2), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCapture3), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCapture4), (8 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCounter), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetFlagStatus), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetITStatus), (34 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetPrescaler), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ICInit), (172 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ICStructInit), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ITConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ITRxExternalClockConfig), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_InternalClockConfig), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1FastConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1Init), (152 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1NPolarityConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1PolarityConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1PreloadConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2FastConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2Init), (164 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2NPolarityConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2PolarityConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2PreloadConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3FastConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3Init), (160 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3NPolarityConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3PolarityConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3PreloadConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC4FastConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC4Init), (124 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC4PolarityConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC4PreloadConfig), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OCStructInit), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_PWMIConfig), (124 bytes).
+    Removing stm32f10x_tim.o(i.TIM_PrescalerConfig), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectCCDMA), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectCOM), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectHallSensor), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectInputTrigger), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectMasterSlaveMode), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectOCxM), (82 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectOnePulseMode), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectOutputTrigger), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectSlaveMode), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetAutoreload), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetClockDivision), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCompare1), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCompare2), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCompare3), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCompare4), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCounter), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetIC1Prescaler), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetIC2Prescaler), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetIC3Prescaler), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetIC4Prescaler), (26 bytes).
+    Removing stm32f10x_tim.o(i.TIM_TIxExternalClockConfig), (62 bytes).
+    Removing stm32f10x_tim.o(i.TIM_TimeBaseInit), (164 bytes).
+    Removing stm32f10x_tim.o(i.TIM_TimeBaseStructInit), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_UpdateDisableConfig), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_UpdateRequestConfig), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_ClearFlag), (18 bytes).
+    Removing stm32f10x_usart.o(i.USART_ClearITPendingBit), (30 bytes).
+    Removing stm32f10x_usart.o(i.USART_ClockInit), (34 bytes).
+    Removing stm32f10x_usart.o(i.USART_ClockStructInit), (12 bytes).
+    Removing stm32f10x_usart.o(i.USART_DMACmd), (18 bytes).
+    Removing stm32f10x_usart.o(i.USART_DeInit), (156 bytes).
+    Removing stm32f10x_usart.o(i.USART_GetFlagStatus), (26 bytes).
+    Removing stm32f10x_usart.o(i.USART_HalfDuplexCmd), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_IrDACmd), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_IrDAConfig), (18 bytes).
+    Removing stm32f10x_usart.o(i.USART_LINBreakDetectLengthConfig), (18 bytes).
+    Removing stm32f10x_usart.o(i.USART_LINCmd), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_OneBitMethodCmd), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_OverSampling8Cmd), (22 bytes).
+    Removing stm32f10x_usart.o(i.USART_ReceiverWakeUpCmd), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_SendBreak), (10 bytes).
+    Removing stm32f10x_usart.o(i.USART_SetAddress), (18 bytes).
+    Removing stm32f10x_usart.o(i.USART_SetGuardTime), (16 bytes).
+    Removing stm32f10x_usart.o(i.USART_SetPrescaler), (16 bytes).
+    Removing stm32f10x_usart.o(i.USART_SmartCardCmd), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_SmartCardNACKCmd), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_StructInit), (24 bytes).
+    Removing stm32f10x_usart.o(i.USART_WakeUpConfig), (18 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_ClearFlag), (12 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_DeInit), (22 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_Enable), (16 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_EnableIT), (12 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_GetFlagStatus), (12 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_SetCounter), (16 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_SetPrescaler), (24 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_SetWindowValue), (40 bytes).
+    Removing key.o(i.KEY_Init), (52 bytes).
+    Removing led.o(i.LED_Init), (56 bytes).
+    Removing delay.o(i.delay_us), (76 bytes).
+    Removing sys.o(i.NVIC_Configuration), (12 bytes).
+    Removing usart.o(i._sys_exit), (4 bytes).
+    Removing usart.o(i.fputc), (28 bytes).
+    Removing usart.o(i.uart2_init), (164 bytes).
+    Removing usart.o(.bss), (400 bytes).
+    Removing usart.o(.data), (8 bytes).
+    Removing phone_ui.o(i.Button_SetBackgroundColor), (56 bytes).
+    Removing phone_ui.o(i.Button_SetRotation), (56 bytes).
+    Removing phone_ui.o(i.Button_SetStyle), (64 bytes).
+    Removing phone_ui.o(i.Button_SetTextColor), (56 bytes).
+    Removing phone_ui.o(i.EditText_SetBackgroundColor), (64 bytes).
+    Removing phone_ui.o(i.EditText_SetFloat), (204 bytes).
+    Removing phone_ui.o(i.EditText_SetInt), (64 bytes).
+    Removing phone_ui.o(i.EditText_SetRotation), (64 bytes).
+    Removing phone_ui.o(i.EditText_SetStyle), (64 bytes).
+    Removing phone_ui.o(i.EditText_SetText), (72 bytes).
+    Removing phone_ui.o(i.EditText_SetTextColor), (64 bytes).
+    Removing phone_ui.o(i.EditText_SetTextSize), (64 bytes).
+    Removing phone_ui.o(i.JoyStick_SetBackgroundColor), (64 bytes).
+    Removing phone_ui.o(i.JoyStick_SetStyle), (64 bytes).
+    Removing phone_ui.o(i.LineChart_Clear), (48 bytes).
+    Removing phone_ui.o(i.LineChart_SetBackgroundColor), (56 bytes).
+    Removing phone_ui.o(i.LineChart_SetXAxis), (56 bytes).
+    Removing phone_ui.o(i.LineChart_SetYAxis), (64 bytes).
+    Removing phone_ui.o(i.SeekBar_SetBackgroundColor), (56 bytes).
+    Removing phone_ui.o(i.SeekBar_SetMax), (56 bytes).
+    Removing phone_ui.o(i.SeekBar_SetRotation), (56 bytes).
+    Removing phone_ui.o(i.SeekBar_SetStyle), (56 bytes).
+    Removing phone_ui.o(i.Switch_SetBackgroundColor), (56 bytes).
+    Removing phone_ui.o(i.Switch_SetColor), (56 bytes).
+    Removing phone_ui.o(i.Switch_SetRotation), (56 bytes).
+    Removing phone_ui.o(i.Switch_SetStyle), (56 bytes).
+    Removing phone_ui.o(i.TextView_AddFloat), (204 bytes).
+    Removing phone_ui.o(i.TextView_SetFloat), (204 bytes).
+    Removing phone_ui.o(i.TextView_SetInt), (56 bytes).
+    Removing phone_ui.o(i.TextView_SetRotation), (56 bytes).
+    Removing phone_ui.o(i.TextView_SetTextColor), (56 bytes).
+    Removing phone_ui.o(i.TextView_SetTextSize), (56 bytes).
+    Removing dmul.o(.text), (228 bytes).
+    Removing dfltui.o(.text), (26 bytes).
+    Removing ffixi.o(.text), (50 bytes).
+    Removing dfixui.o(.text), (50 bytes).
+    Removing f2d.o(.text), (38 bytes).
+    Removing cfcmple.o(.text), (20 bytes).
+    Removing cfrcmple.o(.text), (20 bytes).
+    Removing dadd.o(.text), (334 bytes).
+    Removing ddiv.o(.text), (222 bytes).
+    Removing dscalb.o(.text), (46 bytes).
+    Removing cdrcmple.o(.text), (48 bytes).
+    Removing dsqrt.o(.text), (162 bytes).
+    Removing cdcmple.o(.text), (48 bytes).
+
+517 unused section(s) (total 23190 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/string/strcpy.c         0x00000000   Number         0  strcpy.o ABSOLUTE
+    ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  useno.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
+    ../fplib/microlib/fpsqrt.c               0x00000000   Number         0  dsqrt.o ABSOLUTE
+    ../mathlib/dunder.c                      0x00000000   Number         0  dunder.o ABSOLUTE
+    ../mathlib/fpclassify.c                  0x00000000   Number         0  fpclassify.o ABSOLUTE
+    ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
+    ../mathlib/pow.c                         0x00000000   Number         0  pow_x.o ABSOLUTE
+    ../mathlib/pow.c                         0x00000000   Number         0  pow.o ABSOLUTE
+    ../mathlib/qnan.c                        0x00000000   Number         0  qnan.o ABSOLUTE
+    ../mathlib/sqrt.c                        0x00000000   Number         0  sqrt_x.o ABSOLUTE
+    ../mathlib/sqrt.c                        0x00000000   Number         0  sqrt.o ABSOLUTE
+    ..\HARDWARE\KEY\key.c                    0x00000000   Number         0  key.o ABSOLUTE
+    ..\HARDWARE\LED\led.c                    0x00000000   Number         0  led.o ABSOLUTE
+    ..\HARDWARE\UI\main_window.c             0x00000000   Number         0  main_window.o ABSOLUTE
+    ..\HARDWARE\UI\phone_ui.c                0x00000000   Number         0  phone_ui.o ABSOLUTE
+    ..\Libraries\CMSIS\Starup\startup_stm32f10x_hd.s 0x00000000   Number         0  startup_stm32f10x_hd.o ABSOLUTE
+    ..\Libraries\CMSIS\core_cm3.c            0x00000000   Number         0  core_cm3.o ABSOLUTE
+    ..\Libraries\CMSIS\system_stm32f10x.c    0x00000000   Number         0  system_stm32f10x.o ABSOLUTE
+    ..\Libraries\FWLIB\src\misc.c            0x00000000   Number         0  misc.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_adc.c   0x00000000   Number         0  stm32f10x_adc.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_bkp.c   0x00000000   Number         0  stm32f10x_bkp.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_can.c   0x00000000   Number         0  stm32f10x_can.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_cec.c   0x00000000   Number         0  stm32f10x_cec.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_crc.c   0x00000000   Number         0  stm32f10x_crc.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_dac.c   0x00000000   Number         0  stm32f10x_dac.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_dbgmcu.c 0x00000000   Number         0  stm32f10x_dbgmcu.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_dma.c   0x00000000   Number         0  stm32f10x_dma.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_exti.c  0x00000000   Number         0  stm32f10x_exti.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_flash.c 0x00000000   Number         0  stm32f10x_flash.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_fsmc.c  0x00000000   Number         0  stm32f10x_fsmc.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_gpio.c  0x00000000   Number         0  stm32f10x_gpio.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_i2c.c   0x00000000   Number         0  stm32f10x_i2c.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_iwdg.c  0x00000000   Number         0  stm32f10x_iwdg.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_pwr.c   0x00000000   Number         0  stm32f10x_pwr.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_rcc.c   0x00000000   Number         0  stm32f10x_rcc.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_rtc.c   0x00000000   Number         0  stm32f10x_rtc.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_sdio.c  0x00000000   Number         0  stm32f10x_sdio.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_spi.c   0x00000000   Number         0  stm32f10x_spi.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_tim.c   0x00000000   Number         0  stm32f10x_tim.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_usart.c 0x00000000   Number         0  stm32f10x_usart.o ABSOLUTE
+    ..\Libraries\FWLIB\src\stm32f10x_wwdg.c  0x00000000   Number         0  stm32f10x_wwdg.o ABSOLUTE
+    ..\SYSTEM\delay\delay.c                  0x00000000   Number         0  delay.o ABSOLUTE
+    ..\SYSTEM\sys\sys.c                      0x00000000   Number         0  sys.o ABSOLUTE
+    ..\SYSTEM\usart\usart.c                  0x00000000   Number         0  usart.o ABSOLUTE
+    ..\USER\main.c                           0x00000000   Number         0  main.o ABSOLUTE
+    ..\USER\stm32f10x_it.c                   0x00000000   Number         0  stm32f10x_it.o ABSOLUTE
+    ..\\Libraries\\CMSIS\\core_cm3.c         0x00000000   Number         0  core_cm3.o ABSOLUTE
+    cdcmple.s                                0x00000000   Number         0  cdcmple.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    cfcmple.s                                0x00000000   Number         0  cfcmple.o ABSOLUTE
+    cfrcmple.s                               0x00000000   Number         0  cfrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    RESET                                    0x08000000   Section      304  startup_stm32f10x_hd.o(RESET)
+    .ARM.Collect$$$$00000000                 0x08000130   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x08000130   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x08000134   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x08000138   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x08000138   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x08000138   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x08000140   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x08000140   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x08000140   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x08000140   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x08000144   Section       36  startup_stm32f10x_hd.o(.text)
+    .text                                    0x08000168   Section        0  strlen.o(.text)
+    .text                                    0x08000176   Section        0  strcpy.o(.text)
+    .text                                    0x08000188   Section        0  dflti.o(.text)
+    .text                                    0x080001aa   Section        0  llushr.o(.text)
+    .text                                    0x080001ca   Section        0  depilogue.o(.text)
+    .text                                    0x080001ca   Section        0  iusefp.o(.text)
+    .text                                    0x08000284   Section       36  init.o(.text)
+    .text                                    0x080002a8   Section        0  llshl.o(.text)
+    i.AddButtonToList                        0x080002c8   Section        0  phone_ui.o(i.AddButtonToList)
+    i.AddEditTextToList                      0x08000304   Section        0  phone_ui.o(i.AddEditTextToList)
+    i.AddJoyStickToList                      0x08000340   Section        0  phone_ui.o(i.AddJoyStickToList)
+    i.AddLineChartToList                     0x0800037c   Section        0  phone_ui.o(i.AddLineChartToList)
+    i.AddSeekBarToList                       0x080003b8   Section        0  phone_ui.o(i.AddSeekBarToList)
+    i.AddSwitchToList                        0x080003f4   Section        0  phone_ui.o(i.AddSwitchToList)
+    i.AddTextViewToList                      0x08000430   Section        0  phone_ui.o(i.AddTextViewToList)
+    i.BusFault_Handler                       0x0800046c   Section        0  stm32f10x_it.o(i.BusFault_Handler)
+    i.Button_Init                            0x08000470   Section        0  phone_ui.o(i.Button_Init)
+    i.Button_SetColor                        0x080004d0   Section        0  phone_ui.o(i.Button_SetColor)
+    i.Button_SetText                         0x08000508   Section        0  phone_ui.o(i.Button_SetText)
+    i.Button_SetTextSize                     0x0800054c   Section        0  phone_ui.o(i.Button_SetTextSize)
+    i.DebugMon_Handler                       0x08000584   Section        0  stm32f10x_it.o(i.DebugMon_Handler)
+    i.EditText_Init                          0x08000588   Section        0  phone_ui.o(i.EditText_Init)
+    i.EditText_SetHint                       0x080005e8   Section        0  phone_ui.o(i.EditText_SetHint)
+    i.GPIO_Init                              0x08000630   Section        0  stm32f10x_gpio.o(i.GPIO_Init)
+    i.HardFault_Handler                      0x08000746   Section        0  stm32f10x_it.o(i.HardFault_Handler)
+    i.JoyStick_Init                          0x0800074c   Section        0  phone_ui.o(i.JoyStick_Init)
+    i.JoyStick_SetColor                      0x080007b0   Section        0  phone_ui.o(i.JoyStick_SetColor)
+    i.JoyStick_SetShape                      0x080007f0   Section        0  phone_ui.o(i.JoyStick_SetShape)
+    i.LineChart_AddData                      0x08000830   Section        0  phone_ui.o(i.LineChart_AddData)
+    i.LineChart_Init                         0x08000868   Section        0  phone_ui.o(i.LineChart_Init)
+    i.LineChart_SetChartColor                0x080008c8   Section        0  phone_ui.o(i.LineChart_SetChartColor)
+    i.LineChart_SetLineColor                 0x08000900   Section        0  phone_ui.o(i.LineChart_SetLineColor)
+    i.LineChart_SetStyle                     0x08000938   Section        0  phone_ui.o(i.LineChart_SetStyle)
+    i.MemManage_Handler                      0x08000978   Section        0  stm32f10x_it.o(i.MemManage_Handler)
+    i.NMI_Handler                            0x0800097c   Section        0  stm32f10x_it.o(i.NMI_Handler)
+    i.NVIC_Init                              0x08000980   Section        0  misc.o(i.NVIC_Init)
+    i.NVIC_PriorityGroupConfig               0x080009f0   Section        0  misc.o(i.NVIC_PriorityGroupConfig)
+    i.PendSV_Handler                         0x08000a04   Section        0  stm32f10x_it.o(i.PendSV_Handler)
+    i.RCC_APB2PeriphClockCmd                 0x08000a08   Section        0  stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd)
+    i.RCC_GetClocksFreq                      0x08000a28   Section        0  stm32f10x_rcc.o(i.RCC_GetClocksFreq)
+    i.SVC_Handler                            0x08000afc   Section        0  stm32f10x_it.o(i.SVC_Handler)
+    i.SeekBar_Init                           0x08000b00   Section        0  phone_ui.o(i.SeekBar_Init)
+    i.SeekBar_SetColor                       0x08000b60   Section        0  phone_ui.o(i.SeekBar_SetColor)
+    i.SeekBar_SetProgress                    0x08000b98   Section        0  phone_ui.o(i.SeekBar_SetProgress)
+    i.SetSysClock                            0x08000bd0   Section        0  system_stm32f10x.o(i.SetSysClock)
+    SetSysClock                              0x08000bd1   Thumb Code     8  system_stm32f10x.o(i.SetSysClock)
+    i.SetSysClockTo72                        0x08000bd8   Section        0  system_stm32f10x.o(i.SetSysClockTo72)
+    SetSysClockTo72                          0x08000bd9   Thumb Code   214  system_stm32f10x.o(i.SetSysClockTo72)
+    i.ShowMianMeun                           0x08000cb8   Section        0  main_window.o(i.ShowMianMeun)
+    i.Switch_Init                            0x08000f30   Section        0  phone_ui.o(i.Switch_Init)
+    i.Switch_SetChecked                      0x08000f90   Section        0  phone_ui.o(i.Switch_SetChecked)
+    i.SysTick_CLKSourceConfig                0x08000fc8   Section        0  misc.o(i.SysTick_CLKSourceConfig)
+    i.SysTick_Handler                        0x08000ff0   Section        0  stm32f10x_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x08000ff4   Section        0  system_stm32f10x.o(i.SystemInit)
+    i.TextView_AddInt                        0x08001054   Section        0  phone_ui.o(i.TextView_AddInt)
+    i.TextView_AddText                       0x0800108c   Section        0  phone_ui.o(i.TextView_AddText)
+    i.TextView_Init                          0x080010d0   Section        0  phone_ui.o(i.TextView_Init)
+    i.TextView_SetBackgroundColor            0x08001130   Section        0  phone_ui.o(i.TextView_SetBackgroundColor)
+    i.TextView_SetStyle                      0x08001168   Section        0  phone_ui.o(i.TextView_SetStyle)
+    i.TextView_SetText                       0x080011a8   Section        0  phone_ui.o(i.TextView_SetText)
+    i.TextView_SetTextGravity                0x080011ec   Section        0  phone_ui.o(i.TextView_SetTextGravity)
+    i.UI_BufferDeal                          0x08001224   Section        0  phone_ui.o(i.UI_BufferDeal)
+    i.UI_ByteDeal                            0x080012d0   Section        0  phone_ui.o(i.UI_ByteDeal)
+    i.UI_CommandProcessor                    0x08001334   Section        0  phone_ui.o(i.UI_CommandProcessor)
+    i.UI_SendArray                           0x080014d0   Section        0  phone_ui.o(i.UI_SendArray)
+    i.UI_SendByte                            0x080014ec   Section        0  phone_ui.o(i.UI_SendByte)
+    i.UI_SendInt                             0x08001500   Section        0  phone_ui.o(i.UI_SendInt)
+    i.USART1_IRQHandler                      0x08001570   Section        0  usart.o(i.USART1_IRQHandler)
+    i.USART2_IRQHandler                      0x08001594   Section        0  usart.o(i.USART2_IRQHandler)
+    i.USART_Cmd                              0x080015b0   Section        0  stm32f10x_usart.o(i.USART_Cmd)
+    i.USART_GetITStatus                      0x080015c8   Section        0  stm32f10x_usart.o(i.USART_GetITStatus)
+    i.USART_ITConfig                         0x0800161c   Section        0  stm32f10x_usart.o(i.USART_ITConfig)
+    i.USART_Init                             0x08001668   Section        0  stm32f10x_usart.o(i.USART_Init)
+    i.USART_ReceiveData                      0x08001740   Section        0  stm32f10x_usart.o(i.USART_ReceiveData)
+    i.USART_SendData                         0x0800174a   Section        0  stm32f10x_usart.o(i.USART_SendData)
+    i.Uart_SendByte                          0x08001752   Section        0  usart.o(i.Uart_SendByte)
+    i.UsageFault_Handler                     0x0800176e   Section        0  stm32f10x_it.o(i.UsageFault_Handler)
+    i.Window_Clear                           0x08001774   Section        0  phone_ui.o(i.Window_Clear)
+    i.Window_SetBackground                   0x080017fc   Section        0  phone_ui.o(i.Window_SetBackground)
+    i.Window_SetSize                         0x0800182c   Section        0  phone_ui.o(i.Window_SetSize)
+    i.__scatterload_copy                     0x0800186c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0800187a   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800187c   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.delay_init                             0x0800188c   Section        0  delay.o(i.delay_init)
+    i.delay_ms                               0x080018d0   Section        0  delay.o(i.delay_ms)
+    i.main                                   0x0800191c   Section        0  main.o(i.main)
+    i.my_abs                                 0x08001ae0   Section        0  phone_ui.o(i.my_abs)
+    i.my_pow                                 0x08001aee   Section        0  phone_ui.o(i.my_pow)
+    i.uart_init                              0x08001b04   Section        0  usart.o(i.uart_init)
+    .constdata                               0x08001ba4   Section       44  main_window.o(.constdata)
+    TextViewStyle                            0x08001ba4   Data          20  main_window.o(.constdata)
+    LineChartStyle                           0x08001bb8   Data          24  main_window.o(.constdata)
+    .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
+    .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
+    APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
+    ADCPrescTable                            0x20000024   Data           4  stm32f10x_rcc.o(.data)
+    .data                                    0x20000028   Section        4  delay.o(.data)
+    fac_us                                   0x20000028   Data           1  delay.o(.data)
+    fac_ms                                   0x2000002a   Data           2  delay.o(.data)
+    .data                                    0x2000002c   Section       44  phone_ui.o(.data)
+    .data                                    0x20000058   Section       40  main_window.o(.data)
+    .bss                                     0x20000080   Section     1048  phone_ui.o(.bss)
+    .bss                                     0x20000498   Section      120  main_window.o(.bss)
+    STACK                                    0x20000510   Section     1024  startup_stm32f10x_hd.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEX$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __use_no_errno                           0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_exception_handling              0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_fp                              0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_heap                            0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_heap_region                     0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_semihosting                     0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_semihosting_swi                 0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_signal_handling                 0x00000000   Number         0  useno.o ABSOLUTE
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_Size                           0x00000130   Number         0  startup_stm32f10x_hd.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_stm32f10x_hd.o(RESET)
+    __Vectors_End                            0x08000130   Data           0  startup_stm32f10x_hd.o(RESET)
+    __main                                   0x08000131   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x08000131   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x08000135   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x08000139   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x08000139   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x08000139   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x08000139   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x08000141   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x08000141   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x08000145   Thumb Code     8  startup_stm32f10x_hd.o(.text)
+    ADC1_2_IRQHandler                        0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    ADC3_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    CAN1_RX1_IRQHandler                      0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    CAN1_SCE_IRQHandler                      0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA1_Channel1_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA1_Channel2_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA1_Channel3_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA1_Channel4_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA1_Channel5_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA1_Channel6_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA1_Channel7_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA2_Channel1_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA2_Channel2_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA2_Channel3_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    DMA2_Channel4_5_IRQHandler               0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    EXTI0_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    EXTI15_10_IRQHandler                     0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    EXTI1_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    EXTI2_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    EXTI3_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    EXTI4_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    EXTI9_5_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    FLASH_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    FSMC_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    I2C1_ER_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    I2C1_EV_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    I2C2_ER_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    I2C2_EV_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    PVD_IRQHandler                           0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    RCC_IRQHandler                           0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    RTCAlarm_IRQHandler                      0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    RTC_IRQHandler                           0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    SDIO_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    SPI1_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    SPI2_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    SPI3_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TAMPER_IRQHandler                        0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM1_BRK_IRQHandler                      0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM1_CC_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM1_TRG_COM_IRQHandler                  0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM1_UP_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM2_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM3_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM4_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM5_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM6_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM7_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM8_BRK_IRQHandler                      0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM8_CC_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM8_TRG_COM_IRQHandler                  0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    TIM8_UP_IRQHandler                       0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    UART4_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    UART5_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    USART3_IRQHandler                        0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    USBWakeUp_IRQHandler                     0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    USB_HP_CAN1_TX_IRQHandler                0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    USB_LP_CAN1_RX0_IRQHandler               0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    WWDG_IRQHandler                          0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
+    strlen                                   0x08000169   Thumb Code    14  strlen.o(.text)
+    strcpy                                   0x08000177   Thumb Code    18  strcpy.o(.text)
+    __aeabi_i2d                              0x08000189   Thumb Code    34  dflti.o(.text)
+    __aeabi_llsr                             0x080001ab   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x080001ab   Thumb Code     0  llushr.o(.text)
+    __I$use$fp                               0x080001cb   Thumb Code     0  iusefp.o(.text)
+    _double_round                            0x080001cb   Thumb Code    30  depilogue.o(.text)
+    _double_epilogue                         0x080001e9   Thumb Code   156  depilogue.o(.text)
+    __scatterload                            0x08000285   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x08000285   Thumb Code     0  init.o(.text)
+    __aeabi_llsl                             0x080002a9   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x080002a9   Thumb Code     0  llshl.o(.text)
+    AddButtonToList                          0x080002c9   Thumb Code    52  phone_ui.o(i.AddButtonToList)
+    AddEditTextToList                        0x08000305   Thumb Code    52  phone_ui.o(i.AddEditTextToList)
+    AddJoyStickToList                        0x08000341   Thumb Code    52  phone_ui.o(i.AddJoyStickToList)
+    AddLineChartToList                       0x0800037d   Thumb Code    52  phone_ui.o(i.AddLineChartToList)
+    AddSeekBarToList                         0x080003b9   Thumb Code    52  phone_ui.o(i.AddSeekBarToList)
+    AddSwitchToList                          0x080003f5   Thumb Code    52  phone_ui.o(i.AddSwitchToList)
+    AddTextViewToList                        0x08000431   Thumb Code    52  phone_ui.o(i.AddTextViewToList)
+    BusFault_Handler                         0x0800046d   Thumb Code     4  stm32f10x_it.o(i.BusFault_Handler)
+    Button_Init                              0x08000471   Thumb Code    86  phone_ui.o(i.Button_Init)
+    Button_SetColor                          0x080004d1   Thumb Code    48  phone_ui.o(i.Button_SetColor)
+    Button_SetText                           0x08000509   Thumb Code    58  phone_ui.o(i.Button_SetText)
+    Button_SetTextSize                       0x0800054d   Thumb Code    48  phone_ui.o(i.Button_SetTextSize)
+    DebugMon_Handler                         0x08000585   Thumb Code     2  stm32f10x_it.o(i.DebugMon_Handler)
+    EditText_Init                            0x08000589   Thumb Code    86  phone_ui.o(i.EditText_Init)
+    EditText_SetHint                         0x080005e9   Thumb Code    64  phone_ui.o(i.EditText_SetHint)
+    GPIO_Init                                0x08000631   Thumb Code   278  stm32f10x_gpio.o(i.GPIO_Init)
+    HardFault_Handler                        0x08000747   Thumb Code     4  stm32f10x_it.o(i.HardFault_Handler)
+    JoyStick_Init                            0x0800074d   Thumb Code    92  phone_ui.o(i.JoyStick_Init)
+    JoyStick_SetColor                        0x080007b1   Thumb Code    54  phone_ui.o(i.JoyStick_SetColor)
+    JoyStick_SetShape                        0x080007f1   Thumb Code    54  phone_ui.o(i.JoyStick_SetShape)
+    LineChart_AddData                        0x08000831   Thumb Code    48  phone_ui.o(i.LineChart_AddData)
+    LineChart_Init                           0x08000869   Thumb Code    86  phone_ui.o(i.LineChart_Init)
+    LineChart_SetChartColor                  0x080008c9   Thumb Code    48  phone_ui.o(i.LineChart_SetChartColor)
+    LineChart_SetLineColor                   0x08000901   Thumb Code    48  phone_ui.o(i.LineChart_SetLineColor)
+    LineChart_SetStyle                       0x08000939   Thumb Code    54  phone_ui.o(i.LineChart_SetStyle)
+    MemManage_Handler                        0x08000979   Thumb Code     4  stm32f10x_it.o(i.MemManage_Handler)
+    NMI_Handler                              0x0800097d   Thumb Code     2  stm32f10x_it.o(i.NMI_Handler)
+    NVIC_Init                                0x08000981   Thumb Code   100  misc.o(i.NVIC_Init)
+    NVIC_PriorityGroupConfig                 0x080009f1   Thumb Code    10  misc.o(i.NVIC_PriorityGroupConfig)
+    PendSV_Handler                           0x08000a05   Thumb Code     2  stm32f10x_it.o(i.PendSV_Handler)
+    RCC_APB2PeriphClockCmd                   0x08000a09   Thumb Code    26  stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd)
+    RCC_GetClocksFreq                        0x08000a29   Thumb Code   192  stm32f10x_rcc.o(i.RCC_GetClocksFreq)
+    SVC_Handler                              0x08000afd   Thumb Code     2  stm32f10x_it.o(i.SVC_Handler)
+    SeekBar_Init                             0x08000b01   Thumb Code    86  phone_ui.o(i.SeekBar_Init)
+    SeekBar_SetColor                         0x08000b61   Thumb Code    48  phone_ui.o(i.SeekBar_SetColor)
+    SeekBar_SetProgress                      0x08000b99   Thumb Code    48  phone_ui.o(i.SeekBar_SetProgress)
+    ShowMianMeun                             0x08000cb9   Thumb Code   540  main_window.o(i.ShowMianMeun)
+    Switch_Init                              0x08000f31   Thumb Code    86  phone_ui.o(i.Switch_Init)
+    Switch_SetChecked                        0x08000f91   Thumb Code    48  phone_ui.o(i.Switch_SetChecked)
+    SysTick_CLKSourceConfig                  0x08000fc9   Thumb Code    40  misc.o(i.SysTick_CLKSourceConfig)
+    SysTick_Handler                          0x08000ff1   Thumb Code     2  stm32f10x_it.o(i.SysTick_Handler)
+    SystemInit                               0x08000ff5   Thumb Code    78  system_stm32f10x.o(i.SystemInit)
+    TextView_AddInt                          0x08001055   Thumb Code    48  phone_ui.o(i.TextView_AddInt)
+    TextView_AddText                         0x0800108d   Thumb Code    58  phone_ui.o(i.TextView_AddText)
+    TextView_Init                            0x080010d1   Thumb Code    86  phone_ui.o(i.TextView_Init)
+    TextView_SetBackgroundColor              0x08001131   Thumb Code    48  phone_ui.o(i.TextView_SetBackgroundColor)
+    TextView_SetStyle                        0x08001169   Thumb Code    54  phone_ui.o(i.TextView_SetStyle)
+    TextView_SetText                         0x080011a9   Thumb Code    58  phone_ui.o(i.TextView_SetText)
+    TextView_SetTextGravity                  0x080011ed   Thumb Code    48  phone_ui.o(i.TextView_SetTextGravity)
+    UI_BufferDeal                            0x08001225   Thumb Code   152  phone_ui.o(i.UI_BufferDeal)
+    UI_ByteDeal                              0x080012d1   Thumb Code    82  phone_ui.o(i.UI_ByteDeal)
+    UI_CommandProcessor                      0x08001335   Thumb Code   392  phone_ui.o(i.UI_CommandProcessor)
+    UI_SendArray                             0x080014d1   Thumb Code    26  phone_ui.o(i.UI_SendArray)
+    UI_SendByte                              0x080014ed   Thumb Code    14  phone_ui.o(i.UI_SendByte)
+    UI_SendInt                               0x08001501   Thumb Code   110  phone_ui.o(i.UI_SendInt)
+    USART1_IRQHandler                        0x08001571   Thumb Code    30  usart.o(i.USART1_IRQHandler)
+    USART2_IRQHandler                        0x08001595   Thumb Code    24  usart.o(i.USART2_IRQHandler)
+    USART_Cmd                                0x080015b1   Thumb Code    24  stm32f10x_usart.o(i.USART_Cmd)
+    USART_GetITStatus                        0x080015c9   Thumb Code    84  stm32f10x_usart.o(i.USART_GetITStatus)
+    USART_ITConfig                           0x0800161d   Thumb Code    74  stm32f10x_usart.o(i.USART_ITConfig)
+    USART_Init                               0x08001669   Thumb Code   210  stm32f10x_usart.o(i.USART_Init)
+    USART_ReceiveData                        0x08001741   Thumb Code    10  stm32f10x_usart.o(i.USART_ReceiveData)
+    USART_SendData                           0x0800174b   Thumb Code     8  stm32f10x_usart.o(i.USART_SendData)
+    Uart_SendByte                            0x08001753   Thumb Code    28  usart.o(i.Uart_SendByte)
+    UsageFault_Handler                       0x0800176f   Thumb Code     4  stm32f10x_it.o(i.UsageFault_Handler)
+    Window_Clear                             0x08001775   Thumb Code    94  phone_ui.o(i.Window_Clear)
+    Window_SetBackground                     0x080017fd   Thumb Code    40  phone_ui.o(i.Window_SetBackground)
+    Window_SetSize                           0x0800182d   Thumb Code    56  phone_ui.o(i.Window_SetSize)
+    __scatterload_copy                       0x0800186d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0800187b   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800187d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    delay_init                               0x0800188d   Thumb Code    50  delay.o(i.delay_init)
+    delay_ms                                 0x080018d1   Thumb Code    72  delay.o(i.delay_ms)
+    main                                     0x0800191d   Thumb Code   330  main.o(i.main)
+    my_abs                                   0x08001ae1   Thumb Code    14  phone_ui.o(i.my_abs)
+    my_pow                                   0x08001aef   Thumb Code    22  phone_ui.o(i.my_pow)
+    uart_init                                0x08001b05   Thumb Code   152  usart.o(i.uart_init)
+    Region$$Table$$Base                      0x08001bd0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001bf0   Number         0  anon$$obj.o(Region$$Table)
+    SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
+    AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
+    UI_Start                                 0x2000002c   Data           2  phone_ui.o(.data)
+    UI_End                                   0x2000002e   Data           2  phone_ui.o(.data)
+    UI_ID                                    0x20000030   Data           2  phone_ui.o(.data)
+    TextViewList                             0x20000034   Data           4  phone_ui.o(.data)
+    ButtonList                               0x20000038   Data           4  phone_ui.o(.data)
+    EditTextList                             0x2000003c   Data           4  phone_ui.o(.data)
+    SwitchList                               0x20000040   Data           4  phone_ui.o(.data)
+    SeekBarList                              0x20000044   Data           4  phone_ui.o(.data)
+    LineChartList                            0x20000048   Data           4  phone_ui.o(.data)
+    JoyStickList                             0x2000004c   Data           4  phone_ui.o(.data)
+    UI_RX_STA                                0x20000050   Data           2  phone_ui.o(.data)
+    rxStart                                  0x20000052   Data           2  phone_ui.o(.data)
+    rxEnd                                    0x20000054   Data           2  phone_ui.o(.data)
+    UI_BUF_STA                               0x20000056   Data           2  phone_ui.o(.data)
+    main_tv                                  0x20000058   Data           8  main_window.o(.data)
+    main_rx_tv                               0x20000060   Data           8  main_window.o(.data)
+    main_bt                                  0x20000068   Data           8  main_window.o(.data)
+    main_lc                                  0x20000070   Data           8  main_window.o(.data)
+    main_lc2                                 0x20000078   Data           8  main_window.o(.data)
+    UI_RX_BUF                                0x20000080   Data          24  phone_ui.o(.bss)
+    UI_BUF                                   0x20000098   Data        1024  phone_ui.o(.bss)
+    main_et                                  0x20000498   Data          32  main_window.o(.bss)
+    main_sw                                  0x200004b8   Data          16  main_window.o(.bss)
+    main_sb                                  0x200004c8   Data          16  main_window.o(.bss)
+    main_sb2                                 0x200004d8   Data          16  main_window.o(.bss)
+    main_js                                  0x200004e8   Data          20  main_window.o(.bss)
+    main_js2                                 0x200004fc   Data          20  main_window.o(.bss)
+    __initial_sp                             0x20000910   Data           0  startup_stm32f10x_hd.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x08000131
+
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001c70, Max: 0x00010000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001bf0, Max: 0x00010000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x00000130   Data   RO            3    RESET               startup_stm32f10x_hd.o
+    0x08000130   0x08000130   0x00000000   Code   RO         3837  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000130   0x08000130   0x00000004   Code   RO         3887    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000134   0x08000134   0x00000004   Code   RO         3890    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000138   0x08000138   0x00000000   Code   RO         3892    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000138   0x08000138   0x00000000   Code   RO         3894    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000138   0x08000138   0x00000008   Code   RO         3895    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000140   0x08000140   0x00000000   Code   RO         3897    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000140   0x08000140   0x00000000   Code   RO         3899    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000140   0x08000140   0x00000004   Code   RO         3888    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000144   0x08000144   0x00000024   Code   RO            4    .text               startup_stm32f10x_hd.o
+    0x08000168   0x08000168   0x0000000e   Code   RO         3840    .text               mc_w.l(strlen.o)
+    0x08000176   0x08000176   0x00000012   Code   RO         3842    .text               mc_w.l(strcpy.o)
+    0x08000188   0x08000188   0x00000022   Code   RO         3846    .text               mf_w.l(dflti.o)
+    0x080001aa   0x080001aa   0x00000020   Code   RO         3901    .text               mc_w.l(llushr.o)
+    0x080001ca   0x080001ca   0x00000000   Code   RO         3910    .text               mc_w.l(iusefp.o)
+    0x080001ca   0x080001ca   0x000000ba   Code   RO         3911    .text               mf_w.l(depilogue.o)
+    0x08000284   0x08000284   0x00000024   Code   RO         3921    .text               mc_w.l(init.o)
+    0x080002a8   0x080002a8   0x0000001e   Code   RO         3923    .text               mc_w.l(llshl.o)
+    0x080002c6   0x080002c6   0x00000002   PAD
+    0x080002c8   0x080002c8   0x0000003c   Code   RO         3331    i.AddButtonToList   phone_ui.o
+    0x08000304   0x08000304   0x0000003c   Code   RO         3332    i.AddEditTextToList  phone_ui.o
+    0x08000340   0x08000340   0x0000003c   Code   RO         3333    i.AddJoyStickToList  phone_ui.o
+    0x0800037c   0x0800037c   0x0000003c   Code   RO         3334    i.AddLineChartToList  phone_ui.o
+    0x080003b8   0x080003b8   0x0000003c   Code   RO         3335    i.AddSeekBarToList  phone_ui.o
+    0x080003f4   0x080003f4   0x0000003c   Code   RO         3336    i.AddSwitchToList   phone_ui.o
+    0x08000430   0x08000430   0x0000003c   Code   RO         3337    i.AddTextViewToList  phone_ui.o
+    0x0800046c   0x0800046c   0x00000004   Code   RO         3147    i.BusFault_Handler  stm32f10x_it.o
+    0x08000470   0x08000470   0x00000060   Code   RO         3338    i.Button_Init       phone_ui.o
+    0x080004d0   0x080004d0   0x00000038   Code   RO         3340    i.Button_SetColor   phone_ui.o
+    0x08000508   0x08000508   0x00000044   Code   RO         3343    i.Button_SetText    phone_ui.o
+    0x0800054c   0x0800054c   0x00000038   Code   RO         3345    i.Button_SetTextSize  phone_ui.o
+    0x08000584   0x08000584   0x00000002   Code   RO         3148    i.DebugMon_Handler  stm32f10x_it.o
+    0x08000586   0x08000586   0x00000002   PAD
+    0x08000588   0x08000588   0x00000060   Code   RO         3346    i.EditText_Init     phone_ui.o
+    0x080005e8   0x080005e8   0x00000048   Code   RO         3349    i.EditText_SetHint  phone_ui.o
+    0x08000630   0x08000630   0x00000116   Code   RO         1292    i.GPIO_Init         stm32f10x_gpio.o
+    0x08000746   0x08000746   0x00000004   Code   RO         3149    i.HardFault_Handler  stm32f10x_it.o
+    0x0800074a   0x0800074a   0x00000002   PAD
+    0x0800074c   0x0800074c   0x00000064   Code   RO         3356    i.JoyStick_Init     phone_ui.o
+    0x080007b0   0x080007b0   0x00000040   Code   RO         3358    i.JoyStick_SetColor  phone_ui.o
+    0x080007f0   0x080007f0   0x00000040   Code   RO         3359    i.JoyStick_SetShape  phone_ui.o
+    0x08000830   0x08000830   0x00000038   Code   RO         3361    i.LineChart_AddData  phone_ui.o
+    0x08000868   0x08000868   0x00000060   Code   RO         3363    i.LineChart_Init    phone_ui.o
+    0x080008c8   0x080008c8   0x00000038   Code   RO         3365    i.LineChart_SetChartColor  phone_ui.o
+    0x08000900   0x08000900   0x00000038   Code   RO         3366    i.LineChart_SetLineColor  phone_ui.o
+    0x08000938   0x08000938   0x00000040   Code   RO         3367    i.LineChart_SetStyle  phone_ui.o
+    0x08000978   0x08000978   0x00000004   Code   RO         3150    i.MemManage_Handler  stm32f10x_it.o
+    0x0800097c   0x0800097c   0x00000002   Code   RO         3151    i.NMI_Handler       stm32f10x_it.o
+    0x0800097e   0x0800097e   0x00000002   PAD
+    0x08000980   0x08000980   0x00000070   Code   RO          137    i.NVIC_Init         misc.o
+    0x080009f0   0x080009f0   0x00000014   Code   RO          138    i.NVIC_PriorityGroupConfig  misc.o
+    0x08000a04   0x08000a04   0x00000002   Code   RO         3152    i.PendSV_Handler    stm32f10x_it.o
+    0x08000a06   0x08000a06   0x00000002   PAD
+    0x08000a08   0x08000a08   0x00000020   Code   RO         1710    i.RCC_APB2PeriphClockCmd  stm32f10x_rcc.o
+    0x08000a28   0x08000a28   0x000000d4   Code   RO         1718    i.RCC_GetClocksFreq  stm32f10x_rcc.o
+    0x08000afc   0x08000afc   0x00000002   Code   RO         3153    i.SVC_Handler       stm32f10x_it.o
+    0x08000afe   0x08000afe   0x00000002   PAD
+    0x08000b00   0x08000b00   0x00000060   Code   RO         3370    i.SeekBar_Init      phone_ui.o
+    0x08000b60   0x08000b60   0x00000038   Code   RO         3372    i.SeekBar_SetColor  phone_ui.o
+    0x08000b98   0x08000b98   0x00000038   Code   RO         3374    i.SeekBar_SetProgress  phone_ui.o
+    0x08000bd0   0x08000bd0   0x00000008   Code   RO           24    i.SetSysClock       system_stm32f10x.o
+    0x08000bd8   0x08000bd8   0x000000e0   Code   RO           25    i.SetSysClockTo72   system_stm32f10x.o
+    0x08000cb8   0x08000cb8   0x00000278   Code   RO         3807    i.ShowMianMeun      main_window.o
+    0x08000f30   0x08000f30   0x00000060   Code   RO         3377    i.Switch_Init       phone_ui.o
+    0x08000f90   0x08000f90   0x00000038   Code   RO         3379    i.Switch_SetChecked  phone_ui.o
+    0x08000fc8   0x08000fc8   0x00000028   Code   RO          141    i.SysTick_CLKSourceConfig  misc.o
+    0x08000ff0   0x08000ff0   0x00000002   Code   RO         3154    i.SysTick_Handler   stm32f10x_it.o
+    0x08000ff2   0x08000ff2   0x00000002   PAD
+    0x08000ff4   0x08000ff4   0x00000060   Code   RO           27    i.SystemInit        system_stm32f10x.o
+    0x08001054   0x08001054   0x00000038   Code   RO         3384    i.TextView_AddInt   phone_ui.o
+    0x0800108c   0x0800108c   0x00000044   Code   RO         3385    i.TextView_AddText  phone_ui.o
+    0x080010d0   0x080010d0   0x00000060   Code   RO         3386    i.TextView_Init     phone_ui.o
+    0x08001130   0x08001130   0x00000038   Code   RO         3387    i.TextView_SetBackgroundColor  phone_ui.o
+    0x08001168   0x08001168   0x00000040   Code   RO         3391    i.TextView_SetStyle  phone_ui.o
+    0x080011a8   0x080011a8   0x00000044   Code   RO         3392    i.TextView_SetText  phone_ui.o
+    0x080011ec   0x080011ec   0x00000038   Code   RO         3394    i.TextView_SetTextGravity  phone_ui.o
+    0x08001224   0x08001224   0x000000ac   Code   RO         3396    i.UI_BufferDeal     phone_ui.o
+    0x080012d0   0x080012d0   0x00000064   Code   RO         3397    i.UI_ByteDeal       phone_ui.o
+    0x08001334   0x08001334   0x0000019c   Code   RO         3398    i.UI_CommandProcessor  phone_ui.o
+    0x080014d0   0x080014d0   0x0000001a   Code   RO         3399    i.UI_SendArray      phone_ui.o
+    0x080014ea   0x080014ea   0x00000002   PAD
+    0x080014ec   0x080014ec   0x00000014   Code   RO         3400    i.UI_SendByte       phone_ui.o
+    0x08001500   0x08001500   0x0000006e   Code   RO         3401    i.UI_SendInt        phone_ui.o
+    0x0800156e   0x0800156e   0x00000002   PAD
+    0x08001570   0x08001570   0x00000024   Code   RO         3272    i.USART1_IRQHandler  usart.o
+    0x08001594   0x08001594   0x0000001c   Code   RO         3273    i.USART2_IRQHandler  usart.o
+    0x080015b0   0x080015b0   0x00000018   Code   RO         2878    i.USART_Cmd         stm32f10x_usart.o
+    0x080015c8   0x080015c8   0x00000054   Code   RO         2882    i.USART_GetITStatus  stm32f10x_usart.o
+    0x0800161c   0x0800161c   0x0000004a   Code   RO         2884    i.USART_ITConfig    stm32f10x_usart.o
+    0x08001666   0x08001666   0x00000002   PAD
+    0x08001668   0x08001668   0x000000d8   Code   RO         2885    i.USART_Init        stm32f10x_usart.o
+    0x08001740   0x08001740   0x0000000a   Code   RO         2892    i.USART_ReceiveData  stm32f10x_usart.o
+    0x0800174a   0x0800174a   0x00000008   Code   RO         2895    i.USART_SendData    stm32f10x_usart.o
+    0x08001752   0x08001752   0x0000001c   Code   RO         3274    i.Uart_SendByte     usart.o
+    0x0800176e   0x0800176e   0x00000004   Code   RO         3155    i.UsageFault_Handler  stm32f10x_it.o
+    0x08001772   0x08001772   0x00000002   PAD
+    0x08001774   0x08001774   0x00000088   Code   RO         3402    i.Window_Clear      phone_ui.o
+    0x080017fc   0x080017fc   0x00000030   Code   RO         3403    i.Window_SetBackground  phone_ui.o
+    0x0800182c   0x0800182c   0x00000040   Code   RO         3404    i.Window_SetSize    phone_ui.o
+    0x0800186c   0x0800186c   0x0000000e   Code   RO         3933    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800187a   0x0800187a   0x00000002   Code   RO         3934    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800187c   0x0800187c   0x0000000e   Code   RO         3935    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800188a   0x0800188a   0x00000002   PAD
+    0x0800188c   0x0800188c   0x00000044   Code   RO         3234    i.delay_init        delay.o
+    0x080018d0   0x080018d0   0x0000004c   Code   RO         3235    i.delay_ms          delay.o
+    0x0800191c   0x0800191c   0x000001c4   Code   RO         3108    i.main              main.o
+    0x08001ae0   0x08001ae0   0x0000000e   Code   RO         3405    i.my_abs            phone_ui.o
+    0x08001aee   0x08001aee   0x00000016   Code   RO         3406    i.my_pow            phone_ui.o
+    0x08001b04   0x08001b04   0x000000a0   Code   RO         3278    i.uart_init         usart.o
+    0x08001ba4   0x08001ba4   0x0000002c   Data   RO         3809    .constdata          main_window.o
+    0x08001bd0   0x08001bd0   0x00000020   Data   RO         3931    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001bf0, Size: 0x00000910, Max: 0x00005000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x08001bf0   0x00000014   Data   RW           28    .data               system_stm32f10x.o
+    0x20000014   0x08001c04   0x00000014   Data   RW         1738    .data               stm32f10x_rcc.o
+    0x20000028   0x08001c18   0x00000004   Data   RW         3237    .data               delay.o
+    0x2000002c   0x08001c1c   0x0000002c   Data   RW         3408    .data               phone_ui.o
+    0x20000058   0x08001c48   0x00000028   Data   RW         3810    .data               main_window.o
+    0x20000080        -       0x00000418   Zero   RW         3407    .bss                phone_ui.o
+    0x20000498        -       0x00000078   Zero   RW         3808    .bss                main_window.o
+    0x20000510        -       0x00000400   Zero   RW            1    STACK               startup_stm32f10x_hd.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+         0          0          0          0          0       4508   core_cm3.o
+       144         22          0          4          0       1316   delay.o
+       452        122          0          0          0       4947   main.o
+       632         92         44         40        120       1795   main_window.o
+       172         22          0          0          0       2209   misc.o
+      3368        412          0         44       1048      29462   phone_ui.o
+        36          8        304          0       1024        876   startup_stm32f10x_hd.o
+       278          0          0          0          0       2040   stm32f10x_gpio.o
+        26          0          0          0          0       4214   stm32f10x_it.o
+       244         26          0         20          0       4021   stm32f10x_rcc.o
+       416          6          0          0          0       5819   stm32f10x_usart.o
+       328         28          0         20          0     229285   system_stm32f10x.o
+       252         18          0          0          0       2888   usart.o
+
+    ----------------------------------------------------------------------
+      6368        756        380        128       2192     293380   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        20          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        30          0          0          0          0         68   llshl.o
+        32          0          0          0          0         68   llushr.o
+        18          0          0          0          0         68   strcpy.o
+        14          0          0          0          0         68   strlen.o
+       186          0          0          0          0        176   depilogue.o
+        34          0          0          0          0         76   dflti.o
+
+    ----------------------------------------------------------------------
+       404         16          0          0          0        592   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       180         16          0          0          0        340   mc_w.l
+       220          0          0          0          0        252   mf_w.l
+
+    ----------------------------------------------------------------------
+       404         16          0          0          0        592   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      6772        772        380        128       2192     290120   Grand Totals
+      6772        772        380        128       2192     290120   ELF Image Totals
+      6772        772        380        128          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 7152 (   6.98kB)
+    Total RW  Size (RW Data + ZI Data)              2320 (   2.27kB)
+    Total ROM Size (Code + RO Data + RW Data)       7280 (   7.11kB)
+
+==============================================================================
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:background="@color/app_background"
+    tools:context=".Activity.BluetoothActivity"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bluetooth_tb"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        app:navigationIcon="@drawable/back_image"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="蓝牙"
+            android:textColor="#FFF"
+            android:textSize="20dp" />
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="0dp"
+            android:paddingTop="?attr/actionBarSize">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
+            <Button
+                android:id="@+id/bluetooth_scan_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="扫描设备"
+                android:textSize="18dp"
+                android:textColor="#0000FF"
+                android:background="#FFFFFF"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="已配对设备"
+                android:gravity="bottom" />
+            <ListView
+                android:id="@+id/bluetooth_contented_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="可用设备"
+                android:gravity="bottom" />
+            <ListView
+                android:id="@+id/bluetooth_device_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"/>
+            <TextView
+                android:id="@+id/bluetooth_tv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00FFFFFF" >
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="130dp"
+        android:background="@drawable/shape_dialog"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/layout_dialog_hint_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="#000"
+            android:text="大兄弟，你蓝牙断了"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c0c0c0"/>
+        <Button
+            android:id="@+id/layout_dialog_hint_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="13dp"
+            android:paddingTop="13dp"
+            android:text="知道了老哥"
+            android:textSize="17dp"
+            android:textColor="#6A5AFF"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.UserActivity"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/user_tb"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        app:navigationIcon="@drawable/back_image"
+        android:background="@color/colorPrimary"
+        app:title="使用手册"
+        app:titleTextColor="#FFFFFFFF">
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/user_pv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:background="@color/app_background"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <TextView
+                android:id="@+id/user_page_now_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1/"
+                android:textColor="#000" />
+            <TextView
+                android:id="@+id/user_page_sum_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/8"
+                android:textColor="#000" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

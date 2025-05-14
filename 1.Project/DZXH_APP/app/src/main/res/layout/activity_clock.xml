@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".Activity.ClockActivity"
+    android:orientation="vertical"
+    android:background="#000">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/clock_tb"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        app:navigationIcon="@drawable/back_image"
+        app:title=" "
+        android:background="#000"
+        app:popupTheme="@style/ToolbarPopupTheme">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="时钟"
+            android:textColor="#FFF"
+            android:textSize="20dp" />
+    </androidx.appcompat.widget.Toolbar>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#666666"/>
+    <TextView
+        android:id="@+id/timer_hour_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="10:25"
+        android:textColor="#FFF"
+        android:textSize="64dp"
+        style="@style/MyTextStyle"/>
+    <TextView
+        android:id="@+id/timer_day_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="4月28日 星期二"
+        android:textColor="#FFF"
+        android:textSize="16dp"/>
+    <com.example.dzxh_app.view.ClockBoard
+        android:id="@+id/timer_clock_cb"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <ToggleButton
+        android:id="@+id/clock_tx_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textOff="开始发送"
+        android:textOn="停止发送"
+        android:textSize="16dp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_clock__button"/>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_ui_blue"
+        android:orderInCategory="100"
+        android:title="蓝牙"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_ui_wifi"
+        android:orderInCategory="100"
+        android:title="wifi"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_ui_help"
+        android:orderInCategory="100"
+        android:title="帮助"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_ui_background"
+        android:orderInCategory="100"
+        android:title="设置"
+        app:showAsAction="never" />
+</menu>

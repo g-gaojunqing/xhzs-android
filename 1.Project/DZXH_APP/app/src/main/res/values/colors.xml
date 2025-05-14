@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#6480FF</color><!--标题栏-->
+    <color name="colorPrimaryDark">#6480FF</color><!--顶部状态栏-->
+    <color name="colorAccent">#6480FF</color><!--一些按钮颜色，如SeekBar-->
+
+    <color name="app_background">#FFEEEEF0</color>
+
+    <color name="colorDialog">#6A5AFF</color>
+
+    <color name="pressed_home">#FFEEEEF0</color>
+
+    <color name="pressed_true">#16000000</color>
+    <color name="pressed_false">#FFFFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="red">#FFFF0000</color>
+</resources>
